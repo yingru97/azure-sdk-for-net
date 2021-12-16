@@ -114,7 +114,7 @@ function VerifyPackages($artifactLocation, $workingDirectory, $apiUrl, $releaseS
     try {
       $parsedPackage = &$parsePkgInfoFn -pkg $pkg -workingDirectory $workingDirectory
 
-      if ($parsedPackage -eq $null) {
+      if ($null -eq $parsedPackage) {
         continue
       }
 

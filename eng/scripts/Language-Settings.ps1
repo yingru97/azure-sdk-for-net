@@ -71,9 +71,8 @@ function IsNugetPackageVersionPublished ($pkgId, $pkgVersion)
 # Parse out package publishing information given a nupkg ZIP format.
 function Get-dotnet-PackageInfoFromPackageFile ($pkg, $workingDirectory)
 {
-  $workFolder = "$workingDirectory$($pkg.Basename)"
-  $origFolder = Get-Location
-  $zipFileLocation = "$workFolder/$($pkg.Basename).zip"
+  $workFolder = Join-Path $workingDirectory $pkg.Basename
+  $zipFileLocation = Join-Path $workFolder "$($pkg.Basename).zip"
   $releaseNotes = ""
   $readmeContent = ""
 

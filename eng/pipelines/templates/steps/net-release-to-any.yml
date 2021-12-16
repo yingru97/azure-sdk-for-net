@@ -21,6 +21,7 @@ parameters:
   PartnerDropsSubscription: ''
   SignedPackagesLink: ''
   NugetVersion: ''
+  CheckoutDirectory: $(Build.SourcesDirectory)
 
 steps:
   - ${{ if ne(parameters.BuildToolsRepoPath, '') }}:
@@ -53,8 +54,9 @@ steps:
     - task: PowerShell@2
       displayName: 'Verify Package Tags and Create Git Releases'
       inputs:
+        pwsh: true
         targetType: filePath
-        filePath: '$(Build.SourcesDirectory)/eng/common/scripts/create-tags-and-git-release.ps1'
+        filePath: '${{ parameters.CheckoutDirectory }}/eng/common/scripts/create-tags-and-git-release.ps1'
         arguments: >
           -artifactLocation ${{ parameters.ArtifactsPath }}
           -workingDirectory $(System.DefaultWorkingDirectory)
