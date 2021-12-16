@@ -43,6 +43,7 @@ function Get-AllPackageInfoFromRepo($serviceDirectory)
 # Returns the nuget publish status of a package id and version.
 function IsNugetPackageVersionPublished ($pkgId, $pkgVersion)
 {
+  Write-Host "Checking nuget for released versions of Package $pkgId : $pkgVersion"
   $nugetUri = "https://api.nuget.org/v3-flatcontainer/$($pkgId.ToLowerInvariant())/index.json"
 
   try
@@ -53,7 +54,7 @@ function IsNugetPackageVersionPublished ($pkgId, $pkgVersion)
   catch
   {
     $statusCode = $_.Exception.Response.StatusCode.value__
-    $statusDescription = $_.Exception.Response.StatusDescription
+    $statusDescription = $_.Exception.Response.ReasonPhrase
 
     # if this is 404ing, then this pkg has never been published before
     if ($statusCode -eq 404) {
