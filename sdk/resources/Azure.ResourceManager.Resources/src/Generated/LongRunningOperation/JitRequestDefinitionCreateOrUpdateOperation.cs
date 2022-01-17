@@ -18,20 +18,20 @@ using Azure.ResourceManager.Resources;
 namespace Azure.ResourceManager.Resources.Models
 {
     /// <summary> Creates or updates the JIT request. </summary>
-    public partial class JitRequestCreateOrUpdateOperation : Operation<JitRequestDefinition>, IOperationSource<JitRequestDefinition>
+    public partial class JitRequestDefinitionCreateOrUpdateOperation : Operation<JitRequestDefinition>, IOperationSource<JitRequestDefinition>
     {
         private readonly OperationInternals<JitRequestDefinition> _operation;
 
         private readonly ArmResource _operationBase;
 
-        /// <summary> Initializes a new instance of JitRequestCreateOrUpdateOperation for mocking. </summary>
-        protected JitRequestCreateOrUpdateOperation()
+        /// <summary> Initializes a new instance of JitRequestDefinitionCreateOrUpdateOperation for mocking. </summary>
+        protected JitRequestDefinitionCreateOrUpdateOperation()
         {
         }
 
-        internal JitRequestCreateOrUpdateOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
+        internal JitRequestDefinitionCreateOrUpdateOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
         {
-            _operation = new OperationInternals<JitRequestDefinition>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "JitRequestCreateOrUpdateOperation");
+            _operation = new OperationInternals<JitRequestDefinition>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "JitRequestDefinitionCreateOrUpdateOperation");
             _operationBase = operationsBase;
         }
 

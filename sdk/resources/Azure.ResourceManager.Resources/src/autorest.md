@@ -5,7 +5,7 @@ Run `dotnet build /t:GenerateCode` to generate code.
 ``` yaml
 azure-arm: true
 library-name: Resources
-c-sharp: true
+use: $(this-folder)/../../../../../autorest.csharp/artifacts/bin/AutoRest.CSharp/Debug/netcoreapp3.1/
 namespace: Azure.ResourceManager.Resources
 title: ResourceManagementClient
 tag: package-track2-preview
@@ -123,6 +123,10 @@ directive:
     where: $.definitions.DeploymentOperationProperties
     transform: >
       $.properties.statusMessage["x-nullable"] = true;
+  - from: managedapplications.json
+    where: $.definitions.Identity.properties.type["x-ms-enum"]
+    transform: >
+      $.name = "ApplicationIdentityType"
 ```
 
 ### Tag: package-track2-preview

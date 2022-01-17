@@ -16,18 +16,18 @@ using Azure.Core.Pipeline;
 namespace Azure.ResourceManager.Resources.Models
 {
     /// <summary> Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager.. </summary>
-    public partial class DeploymentValidateAtScopeOperation : Operation<DeploymentValidateResult>, IOperationSource<DeploymentValidateResult>
+    public partial class DeploymentValidateOperation : Operation<DeploymentValidateResult>, IOperationSource<DeploymentValidateResult>
     {
         private readonly OperationInternals<DeploymentValidateResult> _operation;
 
-        /// <summary> Initializes a new instance of DeploymentValidateAtScopeOperation for mocking. </summary>
-        protected DeploymentValidateAtScopeOperation()
+        /// <summary> Initializes a new instance of DeploymentValidateOperation for mocking. </summary>
+        protected DeploymentValidateOperation()
         {
         }
 
-        internal DeploymentValidateAtScopeOperation(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
+        internal DeploymentValidateOperation(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
         {
-            _operation = new OperationInternals<DeploymentValidateResult>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentValidateAtScopeOperation");
+            _operation = new OperationInternals<DeploymentValidateResult>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentValidateOperation");
         }
 
         /// <inheritdoc />

@@ -14,16 +14,16 @@ using Azure.Core;
 namespace Azure.ResourceManager.Resources.Models
 {
     /// <summary> Deletes the JIT request. </summary>
-    public partial class JitRequestDeleteOperation : Operation
+    public partial class JitRequestDefinitionDeleteOperation : Operation
     {
         private readonly OperationOrResponseInternals _operation;
 
-        /// <summary> Initializes a new instance of JitRequestDeleteOperation for mocking. </summary>
-        protected JitRequestDeleteOperation()
+        /// <summary> Initializes a new instance of JitRequestDefinitionDeleteOperation for mocking. </summary>
+        protected JitRequestDefinitionDeleteOperation()
         {
         }
 
-        internal JitRequestDeleteOperation(Response response)
+        internal JitRequestDefinitionDeleteOperation(Response response)
         {
             _operation = new OperationOrResponseInternals(response);
         }

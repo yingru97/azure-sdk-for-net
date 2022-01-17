@@ -18,20 +18,20 @@ using Azure.ResourceManager.Resources;
 namespace Azure.ResourceManager.Resources.Models
 {
     /// <summary> You can provide the template and parameters directly in the request or link to JSON files. </summary>
-    public partial class DeploymentCreateOrUpdateAtScopeOperation : Operation<Deployment>, IOperationSource<Deployment>
+    public partial class DeploymentCreateOrUpdateOperation : Operation<Deployment>, IOperationSource<Deployment>
     {
         private readonly OperationInternals<Deployment> _operation;
 
         private readonly ArmResource _operationBase;
 
-        /// <summary> Initializes a new instance of DeploymentCreateOrUpdateAtScopeOperation for mocking. </summary>
-        protected DeploymentCreateOrUpdateAtScopeOperation()
+        /// <summary> Initializes a new instance of DeploymentCreateOrUpdateOperation for mocking. </summary>
+        protected DeploymentCreateOrUpdateOperation()
         {
         }
 
-        internal DeploymentCreateOrUpdateAtScopeOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
+        internal DeploymentCreateOrUpdateOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
         {
-            _operation = new OperationInternals<Deployment>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentCreateOrUpdateAtScopeOperation");
+            _operation = new OperationInternals<Deployment>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentCreateOrUpdateOperation");
             _operationBase = operationsBase;
         }
 

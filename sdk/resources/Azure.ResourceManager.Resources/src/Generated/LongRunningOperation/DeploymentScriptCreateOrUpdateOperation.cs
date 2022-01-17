@@ -18,20 +18,20 @@ using Azure.ResourceManager.Resources;
 namespace Azure.ResourceManager.Resources.Models
 {
     /// <summary> Creates a deployment script. </summary>
-    public partial class DeploymentScriptCreateOperation : Operation<DeploymentScript>, IOperationSource<DeploymentScript>
+    public partial class DeploymentScriptCreateOrUpdateOperation : Operation<DeploymentScript>, IOperationSource<DeploymentScript>
     {
         private readonly OperationInternals<DeploymentScript> _operation;
 
         private readonly ArmResource _operationBase;
 
-        /// <summary> Initializes a new instance of DeploymentScriptCreateOperation for mocking. </summary>
-        protected DeploymentScriptCreateOperation()
+        /// <summary> Initializes a new instance of DeploymentScriptCreateOrUpdateOperation for mocking. </summary>
+        protected DeploymentScriptCreateOrUpdateOperation()
         {
         }
 
-        internal DeploymentScriptCreateOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
+        internal DeploymentScriptCreateOrUpdateOperation(ArmResource operationsBase, ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Request request, Response response)
         {
-            _operation = new OperationInternals<DeploymentScript>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentScriptCreateOperation");
+            _operation = new OperationInternals<DeploymentScript>(this, clientDiagnostics, pipeline, request, response, OperationFinalStateVia.Location, "DeploymentScriptCreateOrUpdateOperation");
             _operationBase = operationsBase;
         }
 
