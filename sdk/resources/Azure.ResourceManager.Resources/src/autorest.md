@@ -126,7 +126,7 @@ directive:
   - from: managedapplications.json
     where: $.definitions.Identity.properties.type["x-ms-enum"]
     transform: >
-      $.name = "ApplicationIdentityType"
+      $.name = "ApplicationResourceIdentityType"
 ```
 
 ### Tag: package-track2-preview
